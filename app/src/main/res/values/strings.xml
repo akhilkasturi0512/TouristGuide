@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Tourist Guide</string>
+    <string name="enter_mail">Enter Email</string>
+    <string name="password">Password</string>
+    <string name="already_have_an_Account">Already have an account ?</string>
+    <string name="sign_in">Sign in</string>
+    <string name="create_an_account">Create an account ?</string>
+    <string name="sign_up">Sign up</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="jaipur">Jaipur</string>
+    <string name="search">Search..</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hostel_name">Hostel Name</string>
+    <string name="location">Location</string>
+    <string name="description">Description</string>
+    <string name="book_now">Book Now</string>
+    <string name="price">Price:</string>
+    <string name="enter">Enter...</string>
+    <string name="notification">Notification</string>
+    <string name="profile">Profile</string>
+    <string name="save">Save</string>
+    <string name="hotel_name">Hotel name</string>
+    <string name="address">Address :</string>
+    <string name="select_date">Select Date</string>
+    <string name="thanks_for_booking">Thanks for booking</string>
+    <string name="no_network_message">Please check your network connection.</string>
+    <string name="no_internet">Oops! No Internet</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="fourth">4</string>
+    <string name="verify_otp">Verify Otp</string>
+    <string name="send_otp">Send Otp</string>
+    <string name="send">Send</string>
+    <string name="currently_otp_set_static">Currently set static otp</string>
+    <string name="mobile">Mobile no.</string>
+    <string name="rs">\u20B9</string>
+    <string name="pounds">GBP</string>
+    <string name="home">Home</string>
+    <string name="hotel">Hotels</string>
+    <string name="please_enable_your_mobile_data">Please enable your mobile data</string>
+    <string name="please_enable_your_gps">Please enable device GPS</string>
+</resources>
