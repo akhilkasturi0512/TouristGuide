@@ -19,7 +19,6 @@ public class PropertyDetailPresenter extends BasePresenter<IPropertyDetailView>{
 
     public void PropertyDetailCall(final Activity context,String accessToken,String property_id){
 
-        //getView().enableLoadingBar(context,true);
         googleProgressDialog = new GoogleProgressDialog(context);
         googleProgressDialog.showDialog();
 
@@ -27,7 +26,6 @@ public class PropertyDetailPresenter extends BasePresenter<IPropertyDetailView>{
                 .enqueue(new Callback<PropertyDetailResBean>() {
             @Override
             public void onResponse(Call<PropertyDetailResBean> call, Response<PropertyDetailResBean> response) {
-               // getView().enableLoadingBar(context,false);
                 googleProgressDialog.dismiss();
                 try {
                     if (!handleError(response, context)) {
@@ -52,7 +50,6 @@ public class PropertyDetailPresenter extends BasePresenter<IPropertyDetailView>{
             public void onFailure(Call<PropertyDetailResBean> call, Throwable t){
 
                 try {
-                    //getView().enableLoadingBar(context, false);
                     googleProgressDialog.dismiss();
                     t.printStackTrace();
                     getView().onError(null);
@@ -97,7 +94,6 @@ public class PropertyDetailPresenter extends BasePresenter<IPropertyDetailView>{
             public void onFailure(Call<SaveBookingResBean> call, Throwable t) {
 
                 try {
-                    //getView().enableLoadingBar(context, false);
                     googleProgressDialog.dismiss();
                     t.printStackTrace();
                     getView().onError(null);

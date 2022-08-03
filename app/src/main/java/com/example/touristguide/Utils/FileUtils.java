@@ -34,18 +34,11 @@ import okhttp3.ResponseBody;
 public class FileUtils {
 
     public static final String DOCUMENTS_DIR = "documents";
-    // configured android:authorities in AndroidManifest (https://developer.android.com/reference/android/support/v4/content/FileProvider)
     public static final String AUTHORITY =  "YOUR_AUTHORITY.provider";
     public static final String HIDDEN_PREFIX = ".";
 
     static final String TAG = "FileUtils";
     private static final boolean DEBUG = false;
-
-    public static Comparator<File> sComparator = (f1, f2) -> {
-        // Sort alphabetically by lower case, which is much cleaner
-        return f1.getName().toLowerCase().compareTo(
-                f2.getName().toLowerCase());
-    };
 
     public static FileFilter sFileFilter = file -> {
         final String fileName = file.getName();

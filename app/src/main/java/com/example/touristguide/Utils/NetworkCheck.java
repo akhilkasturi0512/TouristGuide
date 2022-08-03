@@ -19,7 +19,6 @@ public class NetworkCheck {
 	static AlertDialog alert;
 
 	public NetworkCheck(Context context) {
-		// TODO Auto-generated constructor stub
 		this.context=context;
 
 	}

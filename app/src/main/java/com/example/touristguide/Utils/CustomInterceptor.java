@@ -21,9 +21,7 @@ import okhttp3.ResponseBody;
 import okio.Buffer;
 import okio.BufferedSource;
 
-/**
- * Created by kipl190 on 2/12/2016.
- */
+
 public class CustomInterceptor implements Interceptor {
 
     private static final Charset UTF8 = Charset.forName("UTF-8");
@@ -57,9 +55,6 @@ public class CustomInterceptor implements Interceptor {
         return query != null ? (path + '?' + query) : path;
     }
 
-    /**
-     * Change the level at which this interceptor logs.
-     */
     public void setLevel(Level level) {
         this.level = level;
     }
@@ -96,8 +91,6 @@ public class CustomInterceptor implements Interceptor {
 
         if (logHeaders) {
             if (hasRequestBody) {
-                // Request body headers are only present when installed as a network interceptor. Force
-                // them to be included (when available) so there values are known.
                 if (requestBody.contentType() != null) {
                     logger.log("Content-Type: " + requestBody.contentType());
                 }
@@ -109,7 +102,6 @@ public class CustomInterceptor implements Interceptor {
             Headers headers = request.headers();
             for (int i = 0, count = headers.size(); i < count; i++) {
                 String name = headers.name(i);
-                // Skip headers from the request body as they are explicitly logged above.
                 if (!"Content-Type".equalsIgnoreCase(name) && !"Content-Length".equalsIgnoreCase(name)) {
                     logger.log(name + ": " + headers.value(i));
                 }
@@ -153,13 +145,13 @@ public class CustomInterceptor implements Interceptor {
                 logger.log(headers.name(i) + ": " + headers.value(i));
             }
 
-            if (!logBody /*|| !HttpEngine.hasBody(response)*/) {
+            if (!logBody ) {
                 logger.log("<-- END HTTP");
             } else if (bodyEncoded(response.headers())) {
                 logger.log("<-- END HTTP (encoded body omitted)");
             } else {
                 BufferedSource source = responseBody.source();
-                source.request(Long.MAX_VALUE); // Buffer the entire body.
+                source.request(Long.MAX_VALUE);
                 Buffer buffer = source.buffer();
 
                 Charset charset = UTF8;
@@ -186,7 +178,7 @@ public class CustomInterceptor implements Interceptor {
         }
 
         if (NetworkCheck.isConnected(context)) {
-            int maxAge = 60; // read from cache for 1 minute
+            int maxAge = 60;
             return response.newBuilder()
                     .header("Cache-Control", "public, max-age=" + maxAge)
                     .build();
@@ -197,7 +189,6 @@ public class CustomInterceptor implements Interceptor {
                     .build();
         }
 
-        // return response;
     }
 
     private boolean bodyEncoded(Headers headers) {
@@ -225,9 +216,7 @@ public class CustomInterceptor implements Interceptor {
         Logger DEFAULT = new Logger() {
             @Override
             public void log(String message) {
-                //Platform.get().logW(message);
                 Log.e("Response", message);
-                //AppUtils.showRoughLog("Response",message);
             }
         };
 

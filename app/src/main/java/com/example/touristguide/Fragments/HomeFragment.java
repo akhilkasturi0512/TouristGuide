@@ -67,13 +67,9 @@ public class HomeFragment extends Fragment implements ICategoryView, LocationLis
         super.onCreateView(inflater, container, savedInstanceState);
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
-        //address = getArguments().getString("address");
-
         categoryPresenter = new CategoryPresenter();
         categoryPresenter.setView(this);
         profileData = new SharedPreferenceData(getActivity());
-
-        //txtLocation.setText(((MainActivity)getActivity()).onLocationChanged());
 
         if(ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
             ActivityCompat.requestPermissions(getActivity(),new String[]{

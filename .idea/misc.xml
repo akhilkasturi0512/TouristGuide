@@ -3,7 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/WorkSpace/TouristGuide/app/src/main/res/drawable/black_cursor.xml" value="0.157" />
+        <entry key="..\:/WorkSpace/TouristGuide/app/src/main/res/drawable/bottombar_bg_solidcolor_teal.xml" value="0.157" />
+        <entry key="..\:/WorkSpace/TouristGuide/app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="..\:/WorkSpace/TouristGuide/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/WorkSpace/TouristGuide/app/src/main/res/layout/activity_otp.xml" value="0.2" />
+        <entry key="..\:/WorkSpace/TouristGuide/app/src/main/res/layout/activity_register.xml" value="0.2" />
+        <entry key="..\:/WorkSpace/TouristGuide/app/src/main/res/layout/activity_splash.xml" value="0.2" />
+        <entry key="..\:/WorkSpace/TouristGuide/app/src/main/res/layout/booking_dialog_box.xml" value="0.2" />
+        <entry key="..\:/WorkSpace/TouristGuide/app/src/main/res/layout/child_seach_layout.xml" value="0.2" />
+        <entry key="..\:/WorkSpace/TouristGuide/app/src/main/res/layout/dialog_progress.xml" value="0.2" />
+        <entry key="..\:/WorkSpace/TouristGuide/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/WorkSpace/TouristGuide/app/src/main/res/layout/fragment_hostels_.xml" value="0.2" />
         <entry key="..\:/WorkSpace/TouristGuide/app/src/main/res/layout/fragment_hotel__detail_.xml" value="0.2" />
+        <entry key="..\:/WorkSpace/TouristGuide/app/src/main/res/layout/fragment_notification.xml" value="0.2" />
+        <entry key="..\:/WorkSpace/TouristGuide/app/src/main/res/layout/fragment_profile.xml" value="0.2" />
+        <entry key="..\:/WorkSpace/TouristGuide/app/src/main/res/layout/fragment_search.xml" value="0.2" />
+        <entry key="..\:/WorkSpace/TouristGuide/app/src/main/res/layout/rv_child_layout.xml" value="0.2" />
+        <entry key="..\:/WorkSpace/TouristGuide/app/src/main/res/layout/rv_detail_child_layout.xml" value="0.2" />
       </map>
     </option>
   </component>

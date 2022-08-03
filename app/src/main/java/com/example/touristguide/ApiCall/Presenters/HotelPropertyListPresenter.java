@@ -25,7 +25,6 @@ public class HotelPropertyListPresenter extends BasePresenter<IHotelsPropertyVie
         TopperApp.getInstance().getApiService().PropertyList("Bearer "+accessToken, cat_id).enqueue(new Callback<HotelsPropertyResBean>() {
             @Override
             public void onResponse(Call<HotelsPropertyResBean> call, Response<HotelsPropertyResBean> response) {
-                //getView().enableLoadingBar(context,false);
                 googleProgressDialog.dismiss();
                 try {
                     if (!handleError(response, context)) {
@@ -50,7 +49,6 @@ public class HotelPropertyListPresenter extends BasePresenter<IHotelsPropertyVie
             @Override
             public void onFailure(Call<HotelsPropertyResBean> call, Throwable t) {
                 try {
-                    //getView().enableLoadingBar(context, false);
                     googleProgressDialog.dismiss();
                     t.printStackTrace();
                     getView().onError(null);

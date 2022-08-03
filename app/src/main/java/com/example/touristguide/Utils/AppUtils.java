@@ -36,7 +36,6 @@ public class AppUtils {
         FragmentTransaction fragmentTransaction = ((FragmentActivity) context).getSupportFragmentManager().beginTransaction();
         fragmentTransaction.add(R.id.SlideCons, fragment);
         fragmentTransaction.addToBackStack(null);
-        //fragmentTransaction.commit();
         fragmentTransaction.commitAllowingStateLoss();
     }
 
@@ -45,7 +44,6 @@ public class AppUtils {
         FragmentTransaction fragmentTransaction = ((FragmentActivity) context).getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.SlideCons, fragment);
         fragmentTransaction.addToBackStack(null);
-        //fragmentTransaction.commit();
         fragmentTransaction.commitAllowingStateLoss();
     }
 

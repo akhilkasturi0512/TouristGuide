@@ -42,11 +42,9 @@ public class Hotels_Fragment extends Fragment implements Hotels_Adapter.ItemClic
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         super.onCreateView(inflater,container,savedInstanceState);
         View view =  inflater.inflate(R.layout.fragment_hostels_, container, false);
-
-        //dataItem = (CategoryResBean.DataItem)getArguments().getSerializable("data");
 
         hotelPropertyListPresenter = new HotelPropertyListPresenter();
         hotelPropertyListPresenter.setView(this);
@@ -67,12 +65,8 @@ public class Hotels_Fragment extends Fragment implements Hotels_Adapter.ItemClic
 
     @Override
     public void OnItemClicked(int position) {
-        /* Intent intent = new Intent(getActivity(),new Hotel_Detail_Activity().getClass());
-         intent.putExtra("property_id",list.get(position));
-         startActivity(intent);*/
         Fragment fragment = new Hotel_Detail_Fragment();
         Bundle bundle = new Bundle();
-        //bundle.putSerializable("property_id",list.get(position));
         bundle.putString("property_id",""+list.get(position).getId());
         fragment.setArguments(bundle);
         AppUtils.goFragmentAddWithoutBackStack(getContext(),fragment);

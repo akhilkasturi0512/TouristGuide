@@ -24,19 +24,7 @@ public abstract class BasePresenter<I extends IUtopperView> {
 
 
     public boolean handleError(Response response, Context context) {
-        /*
-         *
-         * 400 Bad Request
-         * 404 Not Found
-         * 408 Request Timeout
-         * 500 Internal Server Error
-         * 502 Bad Gateway
-         * 503 Service Unavailable
-         * 504 Gateway Timeout
-         * 598 Network Read Timeout
-         * 599 Network Connect Timeout
-         *
-         * */
+
         if (response.code() == 400 ||response.code() == 401 || response.code() == 404 || response.code() == 500
                 || response.code() == 408 || response.code() == 503 || response.code() == 502
                 || response.code() == 504 || response.code() == 598 || response.code() == 599) {

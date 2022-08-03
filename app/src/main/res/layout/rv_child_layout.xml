@@ -68,13 +68,10 @@
                 android:layout_marginBottom="@dimen/dp_4"
                 app:layout_constraintStart_toEndOf="@+id/ic_Location"
                 app:layout_constraintTop_toTopOf="@+id/ic_Location"
-                app:layout_constraintBottom_toBottomOf="@+id/ic_Location"
-               />
-
+                app:layout_constraintBottom_toBottomOf="@+id/ic_Location" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
             
     </androidx.cardview.widget.CardView>
-        
 
 </androidx.constraintlayout.widget.ConstraintLayout>

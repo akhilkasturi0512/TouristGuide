@@ -1,5 +1,6 @@
 package com.example.touristguide.Utils;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
@@ -24,9 +25,6 @@ public  class SystemUtility {
         return systemUtility;
     }
 
-    /**
-     * hide the virtual keyboard from the current screen
-     **/
     public static void hideVirtualKeyboard(Activity _activity) {
 
         try {
@@ -92,6 +90,7 @@ public  class SystemUtility {
         return file.exists();
     }
 
+    @SuppressLint("Range")
     public static String getFileName(Context context, Uri uri) {
         String result = null;
         if (uri.getScheme().equals("content")) {

@@ -7,7 +7,6 @@ public class ApiConstants {
     public static final String BASE_IMAGE_URL = "https://androidhiker.com/tourist_guide/public/";
 
 
-    public static final String ACCESS_TOKEN = "accesstoken:123456";
     public static final String LOGIN_URL = "login";
     public static final String OTP_URL = "register/otp-verify";
     public static final String REGISTER_URL = "register";

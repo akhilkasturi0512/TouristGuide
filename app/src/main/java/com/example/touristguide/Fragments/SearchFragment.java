@@ -39,13 +39,11 @@ public class SearchFragment extends Fragment implements ISearchView,SearchItemLi
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
          binding = DataBindingUtil .inflate(inflater,R.layout.fragment_search, container, false);
          presenter = new SearchPresenter();
          presenter.setView(this);
          profileData = new SharedPreferenceData(getContext());
-
-         //sectionType = getArguments().getString("Sectiontype");
 
 
          searchItemListApdapter = new SearchItemListApdapter(getContext(),list,this);
@@ -85,8 +83,6 @@ public class SearchFragment extends Fragment implements ISearchView,SearchItemLi
             list.addAll(item.getData());
         }
         searchItemListApdapter.notifyDataSetChanged();
-
-
     }
 
     @Override

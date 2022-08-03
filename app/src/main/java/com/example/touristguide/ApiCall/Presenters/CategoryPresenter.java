@@ -47,7 +47,6 @@ public class CategoryPresenter extends BasePresenter<ICategoryView>{
             public void onFailure(Call<CategoryResBean> call, Throwable t) {
 
                 try {
-                    //getView().enableLoadingBar(context, false);
                     googleProgressDialog.dismiss();
                     t.printStackTrace();
                     getView().onError(null);

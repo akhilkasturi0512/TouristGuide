@@ -45,7 +45,6 @@ public class GpsUtils {
         builder.setAlwaysShow(true);
     }
 
-    // method for turn on GPS
     public void turnGPSOn(onGpsListener onGpsListener) {
         if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
             if (onGpsListener != null) {
@@ -58,7 +57,6 @@ public class GpsUtils {
                         @SuppressLint("MissingPermission")
                         @Override
                         public void onSuccess(LocationSettingsResponse locationSettingsResponse) {
-                            //  GPS is already enable, callback GPS status through listener
                             if (onGpsListener != null) {
                                 onGpsListener.gpsStatus(true);
                             }
@@ -71,8 +69,6 @@ public class GpsUtils {
                             switch (statusCode) {
                                 case LocationSettingsStatusCodes.RESOLUTION_REQUIRED:
                                     try {
-                                        // Show the dialog by calling startResolutionForResult(), and check the
-                                        // result in onActivityResult().
                                         ResolvableApiException rae = (ResolvableApiException) e;
                                         rae.startResolutionForResult((Activity) context, 1);
                                     } catch (IntentSender.SendIntentException sie) {

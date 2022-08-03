@@ -24,14 +24,12 @@ public class MainActivity extends AppCompatActivity  implements LocationListener
     BottomNavigationView BottomNevigation;
     public boolean isNeedToOpenHomeFragment = false;
     private boolean doubleBackToExitPressedOnce = false;
-    //String address="null";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //address = getIntent().getStringExtra("address");
 
 
         BottomNevigation = findViewById(R.id.BottomBar);
@@ -66,7 +64,6 @@ public class MainActivity extends AppCompatActivity  implements LocationListener
 
     @Override
     public void onBackPressed(){
-        //Fragment frag = getSupportFragmentManager().findFragmentById(R.id.SlideCons);
         int backStackEntryCount = getSupportFragmentManager().getBackStackEntryCount();
         if (backStackEntryCount > 0) {
             getSupportFragmentManager().popBackStackImmediate();

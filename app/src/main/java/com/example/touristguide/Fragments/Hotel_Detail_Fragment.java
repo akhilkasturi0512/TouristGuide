@@ -45,6 +45,7 @@ public class Hotel_Detail_Fragment extends Fragment implements Detail_Hostel_Ada
     SharedPreferenceData profileData;
     FragmentHotelDetailBinding binding;
     String property;
+    PropertyDetailResBean detailsData;
 
     Dialog dialog;
 
@@ -55,10 +56,9 @@ public class Hotel_Detail_Fragment extends Fragment implements Detail_Hostel_Ada
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         binding = DataBindingUtil .inflate(inflater,R.layout.fragment_hotel__detail_, container, false);
 
-        //dataItem = (HotelsPropertyResBean.DataItem)getArguments().getSerializable("property_id")
         property = getArguments().getString("property_id");
         presenter = new PropertyDetailPresenter();
         presenter.setView(this);
@@ -66,7 +66,6 @@ public class Hotel_Detail_Fragment extends Fragment implements Detail_Hostel_Ada
 
         dialog = new Dialog(getContext());
         dialog.setContentView(R.layout.booking_dialog_box);
-        //dialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.dialog_bg_solid_corner_20));
         dialog.setCancelable(false);
 
         ImageView imgCross = dialog.findViewById(R.id.img_Cross);
@@ -95,7 +94,7 @@ public class Hotel_Detail_Fragment extends Fragment implements Detail_Hostel_Ada
                     Toast.makeText(getActivity(), "Please write some description", Toast.LENGTH_SHORT).show();
                 }
                 else if(NetworkCheck.isConnected(getActivity())){
-                    presenter.SaveBookingCall(getActivity(),profileData.getACCESS_TOKEN(),""+dataItem.getId(),
+                    presenter.SaveBookingCall(getActivity(),profileData.getACCESS_TOKEN(),""+detailsData.getData().getId(),
                             binding.txtSelectDate.getText().toString(),binding.edtDescription.getText().toString());
 
                 }
@@ -120,7 +119,6 @@ public class Hotel_Detail_Fragment extends Fragment implements Detail_Hostel_Ada
                 DatePickerDialog datePickerDialog = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                        //txtSelectDate.setText(SimpleDateFormat.getDateInstance().format(calendar.getTime()));
                         binding.txtSelectDate.setText(year+"/" + (month+1)+"/" +day);
                     }
                 },year,month,day);
@@ -142,7 +140,7 @@ public class Hotel_Detail_Fragment extends Fragment implements Detail_Hostel_Ada
     public void onPropertyDetailSuccess(PropertyDetailResBean item) {
         list.clear();
         if(item.isStatus()){
-            //PROPERTY_ID = ""+item.getData().getId();
+            detailsData = item;
             Picasso.get().load(ApiConstants.BASE_IMAGE_URL + item.getData().getImage()).into(binding.imgHostel);
             list.addAll(item.getData().getPropertyImages());
             propertyDetailResBean = item;

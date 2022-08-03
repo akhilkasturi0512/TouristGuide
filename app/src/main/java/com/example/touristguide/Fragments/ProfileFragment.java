@@ -55,7 +55,7 @@ public class ProfileFragment extends Fragment implements IProfileView {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+
         super.onCreateView(inflater,container,savedInstanceState);
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_profile, container, false);
 
@@ -67,12 +67,6 @@ public class ProfileFragment extends Fragment implements IProfileView {
         binding.edtEmail.setText(profileData.getEmail());
         binding.edtMobile.setText(profileData.getMobile_no());
         Picasso.get().load(ApiConstants.BASE_IMAGE_URL+profileData.getProfile_image()).into(binding.imgProfile);
-
-       /* if(NetworkCheck.isConnected(getContext())){
-            presenter.ProfileCall(getActivity(),profileData.getACCESS_TOKEN());
-        }else{
-            Toast.makeText(getContext(), "Please check your internet connection", Toast.LENGTH_SHORT).show();
-        }*/
 
         binding.btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -197,11 +191,6 @@ public class ProfileFragment extends Fragment implements IProfileView {
     public void onProfileSuccess(ProfileResBean item) {
 
         if(item.isStatus()){
-            /*profileResBean = item;
-            Picasso.get().load(ApiConstants.BASE_IMAGE_URL + item.getData().getProfileImage()).into(binding.imgProfile);
-            binding.edtName.setText(item.getData().getName());
-            binding.edtEmail.setText(item.getData().getEmail());
-            binding.edtMobile.setText(item.getData().getMobile());*/
 
         }
     }
@@ -212,10 +201,6 @@ public class ProfileFragment extends Fragment implements IProfileView {
         if(item.isStatus()){
             new SharedPreferenceData(getActivity()).SavedUpdateProfileData(item);
             Toast.makeText(getContext(), item.getMessage(), Toast.LENGTH_LONG).show();
-            /*Picasso.get().load(ApiConstants.BASE_IMAGE_URL + item.getData().getProfileImage()).into(binding.imgProfile);
-            binding.edtName.setText(item.getData().getName());
-            binding.edtEmail.setText(item.getData().getEmail());
-            binding.edtMobile.setText(item.getData().getMobile());*/
         }
     }
 

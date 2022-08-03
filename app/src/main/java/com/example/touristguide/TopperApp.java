@@ -68,7 +68,6 @@ public class TopperApp extends MultiDexApplication {
                 .cache(cache)
                 .build();
 
-        //init retrofit
         Retrofit retrofit = new Retrofit.Builder().client(okHttpClient)
                 .baseUrl(ApiConstants.BASE_URL)
                 .addConverterFactory(ScalarsConverterFactory.create())

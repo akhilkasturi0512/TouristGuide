@@ -99,19 +99,14 @@ public class ProfilePresenter extends BasePresenter<IProfileView>{
 
                     @Override
                     public void onFailure(Call<UpdateProfileResBean> call, Throwable t) {
-
                         try {
-                            //getView().enableLoadingBar(context, false);
                             googleProgressDialog.dismiss();
                             t.printStackTrace();
                             getView().onError(null);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-
                     }
                 });
-
     }
-
 }
